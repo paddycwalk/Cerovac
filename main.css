@@ -1,3 +1,83 @@
+/* vollkorn-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Vollkorn";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./_res/fonts/vollkorn-v23-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* vollkorn-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Vollkorn";
+  font-style: normal;
+  font-weight: 500;
+  src: url("./_res/fonts/vollkorn-v23-latin-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* vollkorn-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Vollkorn";
+  font-style: normal;
+  font-weight: 600;
+  src: url("./_res/fonts/vollkorn-v23-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* vollkorn-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Vollkorn";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./_res/fonts/vollkorn-v23-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* vollkorn-800 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Vollkorn";
+  font-style: normal;
+  font-weight: 800;
+  src: url("./_res/fonts/vollkorn-v23-latin-800.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* vollkorn-900 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Vollkorn";
+  font-style: normal;
+  font-weight: 900;
+  src: url("./_res/fonts/vollkorn-v23-latin-900.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+.Hl1 {
+  font-size: 48px;
+}
+
+.Hl2 {
+  font-size: 36px;
+}
+
+.Hl3 {
+  font-size: 28px;
+}
+
+.-bold500 {
+  font-weight: 500;
+}
+
+.-bold600 {
+  font-weight: 600;
+}
+
+.-bold700 {
+  font-weight: 700;
+}
+
+.-bold800 {
+  font-weight: 800;
+}
+
+.-bold900 {
+  font-weight: 900;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -17,7 +97,8 @@ html {
 body {
   background-color: var(--color-bg);
   color: var(--color-white);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Vollkorn", Helvetica, sans-serif;
+  font-weight: 400;
 }
 
 main {
@@ -113,6 +194,13 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+nav.fade-in {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 section {
@@ -127,16 +215,16 @@ section {
   width: 50px;
 }
 
-.Hl1 {
-  font-size: 48px;
+.fade {
+  opacity: 0;
+  transform: scale(0.95);
+  filter: blur(10px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out, filter 0.8s ease-out;
 }
-
-.Hl2 {
-  font-size: 36px;
-}
-
-.Hl3 {
-  font-size: 28px;
+.fade.fade-in {
+  opacity: 1;
+  transform: scale(1);
+  filter: blur(0);
 }
 
 .Ueberuns_container {
