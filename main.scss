@@ -93,11 +93,15 @@ img {
 
 .Intro {
   h2 {
-    margin-bottom: 32px;
+    margin-bottom: 18px;
   }
 
   a {
     margin-top: 24px;
+  }
+
+  &-center {
+    text-align: center;
   }
 }
 
@@ -224,4 +228,62 @@ section {
     grid-column: 7/13;
   }
 }
+//
+
+// Leistungen
+.Leistungen {
+  position: relative; // Stelle sicher, dass das Pseudo-Element relativ positioniert ist
+  background-image: url('./_res/img/lorem.jpg');
+  background-size: cover; // Sicherstellen, dass das Bild den gesamten Bereich abdeckt
+  background-position: center; // Bild zentrieren
+
+  &::before {
+    content: ''; // Erstelle ein leeres Pseudo-Element
+    position: absolute; // Absolute Positionierung
+    top: 0; // Oben beginnen
+    left: 0; // Links beginnen
+    width: 100%; // Vollständig breit
+    height: 100%; // Vollständig hoch
+    background-color: rgba(0, 0, 0, 0.8); // Dunkles Overlay mit 50% Opazität
+    z-index: 1; // Hinterlasse den Text über dem Overlay
+  }
+
+  &_container {
+    position: relative;
+    z-index: 2;
+  }
+
+  &_boxContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    grid-column: 3/11;
+    position: relative; // Relativ positionieren, um den Text über das Overlay zu legen
+    z-index: 2; // Höherer Z-Index als das Overlay
+  }
+
+  &_box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 31.33%;
+    text-align: center;
+    align-self: flex-end;
+  }
+
+  &_boxGrid {
+    grid-template-columns: repeat(12, 1fr);
+    display: grid;
+    gap: 40px;
+    margin-top: 40px;
+  }
+
+  h3 {
+    font-family: 'Montserrat';
+    color: var(--color-white); // Textfarbe auf Weiß setzen
+    position: relative; // Relativ positionieren, um über dem Overlay zu liegen
+    z-index: 2; // Höherer Z-Index für den Text
+  }
+}
+
 //
