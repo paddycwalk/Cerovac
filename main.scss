@@ -1,4 +1,4 @@
-@import './fonts.scss';
+@import "./fonts.scss";
 
 * {
   margin: 0;
@@ -9,6 +9,7 @@
   --color-black: #000;
   --color-white: #ffffff;
   --color-primary: rgb(79, 79, 235);
+  --color-primary-dark: rgb(73, 73, 187);
   --color-bg: rgb(41, 41, 41);
 }
 
@@ -19,9 +20,9 @@ html {
 body {
   background: linear-gradient(135deg, #0d0d0d, #333333, #2c2c2c, #1a1a1a);
   color: var(--color-white);
-  font-family: 'Montserrat', Helvetica, sans-serif;
+  font-family: "Montserrat", Helvetica, sans-serif;
   font-weight: 400;
-  overflow-x: hidden; /* To ensure animation stays within the viewport */
+  overflow-x: hidden;
 }
 
 @keyframes gradient-animation {
@@ -72,13 +73,18 @@ img {
   border: none;
   background-color: var(--color-primary);
   color: var(--color-white);
-  padding: 12px 16px;
+  padding: 14px 18px;
   border-radius: 8px;
   display: inline-block;
+  transition: transform 0.3s ease, background-color 0.3s ease-in-out;
 
   &:hover {
     cursor: pointer;
     color: var(--color-white);
+    transform: scale(1.05);
+    background-color: var(
+      --color-primary-dark
+    ); /* Ändere die Farbe beim Hover */
   }
 }
 
@@ -107,13 +113,13 @@ img {
 
 .Header {
   height: calc(100vh - 78px);
-  background-image: url('./_res/img/lorem.jpg');
+  background-image: url("./_res/img/lorem.jpg");
   background-repeat: no-repeat;
   background-size: contain;
   position: relative;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -182,11 +188,9 @@ nav {
   }
 }
 
-section {
-  padding: 120px 0;
-}
-
 .Section {
+  padding: 120px 0;
+
   &-noPadding {
     padding: 0;
   }
@@ -233,18 +237,18 @@ section {
 // Leistungen
 .Leistungen {
   position: relative; // Stelle sicher, dass das Pseudo-Element relativ positioniert ist
-  background-image: url('./_res/img/lorem.jpg');
+  background-image: url("./_res/img/lorem.jpg");
   background-size: cover; // Sicherstellen, dass das Bild den gesamten Bereich abdeckt
   background-position: center; // Bild zentrieren
 
   &::before {
-    content: ''; // Erstelle ein leeres Pseudo-Element
+    content: ""; // Erstelle ein leeres Pseudo-Element
     position: absolute; // Absolute Positionierung
     top: 0; // Oben beginnen
     left: 0; // Links beginnen
     width: 100%; // Vollständig breit
     height: 100%; // Vollständig hoch
-    background-color: rgba(0, 0, 0, 0.8); // Dunkles Overlay mit 50% Opazität
+    background-color: rgba(0, 0, 0, 0.7); // Dunkles Overlay mit 50% Opazität
     z-index: 1; // Hinterlasse den Text über dem Overlay
   }
 
@@ -256,7 +260,7 @@ section {
   &_boxContainer {
     display: flex;
     flex-wrap: wrap;
-    gap: 24px;
+    gap: 48px;
     grid-column: 3/11;
     position: relative; // Relativ positionieren, um den Text über das Overlay zu legen
     z-index: 2; // Höherer Z-Index als das Overlay
@@ -269,21 +273,35 @@ section {
     width: 31.33%;
     text-align: center;
     align-self: flex-end;
+    gap: 18px;
+
+    img {
+      width: 80px;
+      height: 80px;
+    }
   }
 
   &_boxGrid {
     grid-template-columns: repeat(12, 1fr);
     display: grid;
     gap: 40px;
-    margin-top: 40px;
+    margin-top: 60px;
   }
 
   h3 {
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
     color: var(--color-white); // Textfarbe auf Weiß setzen
     position: relative; // Relativ positionieren, um über dem Overlay zu liegen
     z-index: 2; // Höherer Z-Index für den Text
   }
 }
 
+//
+
+// Footer
+.Footer {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
 //
