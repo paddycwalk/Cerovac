@@ -1,4 +1,4 @@
-@import "./fonts.scss";
+@import './fonts.scss';
 
 * {
   margin: 0;
@@ -20,7 +20,7 @@ html {
 body {
   background: linear-gradient(135deg, #0d0d0d, #333333, #2c2c2c, #1a1a1a);
   color: var(--color-white);
-  font-family: "Montserrat", Helvetica, sans-serif;
+  font-family: 'Montserrat', Helvetica, sans-serif;
   font-weight: 400;
   overflow-x: hidden;
 }
@@ -112,38 +112,59 @@ img {
 }
 
 .Header {
-  height: calc(100vh - 78px);
-  background-image: url("./_res/img/lorem.jpg");
+  height: 100vh;
+  background-image: url('./_res/img/lorem.jpg');
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
   position: relative;
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: calc(100vh - 78px);
-    background-color: rgba(0, 0, 0, 0.6); /* Halbtransparentes Schwarz */
-    z-index: 1; /* Damit das Overlay unter dem Text liegt */
+    height: 100vh;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.2) 0%,
+      /* Oben fast transparent */ rgba(0, 0, 0, 1) 100% /* Unten dunkler */
+    );
+    z-index: 1; /* Overlay unter dem Text */
   }
 
   &_container {
     position: relative;
     z-index: 2;
     height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
   }
 
   &_intro {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 180px;
+    opacity: 0;
+    transform: translateY(20px); /* Startpunkt 20px unter der Zielposition */
+    animation: fadeInUp 0.8s ease-in-out forwards; /* Dauer und Typ der Animation */
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 16px;
+    margin-bottom: 180px; /* Abstand zum unteren Ende des Containers */
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px); /* Startpunkt */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Endpunkt bleibt zentriert */
   }
 }
 
@@ -168,24 +189,27 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  opacity: 0;
-  transform: translateY(-50px);
-  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  opacity: 0; /* Unsichtbar beim Start */
+  transform: translateY(-100%); /* Startposition außerhalb des Viewports */
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Animation für Position und Opazität */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1000;
+  margin: 0;
+}
 
-  &.fade-in {
-    opacity: 1;
-    transform: translateY(0);
-  }
+nav.show {
+  transform: translateY(0); /* Navigation fährt rein */
+  opacity: 1; /* Navigation wird eingeblendet */
+}
 
-  li {
-    &:hover {
-      a {
-        border-bottom: 2px solid var(--color-primary);
-        color: var(--color-primary);
-        font-weight: 700;
-      }
-    }
-  }
+nav.hide {
+  transform: translateY(-100%); /* Navigation fährt nach oben raus */
+  opacity: 0; /* Navigation wird ausgeblendet */
 }
 
 .Section {
@@ -230,6 +254,44 @@ nav {
 
   &_right {
     grid-column: 7/13;
+    position: relative;
+  }
+
+  img {
+    border-radius: 20px;
+    // clip-path: polygon(0 0, 90% 0, 100% 10%, 100% 100%, 0 100%);
+  }
+
+  &_badge {
+    position: absolute;
+    width: 100px;
+    height: 120px;
+    bottom: -30px;
+    left: -30px;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 8px;
+    border: 3px solid var(--color-primary);
+  }
+
+  &_hdl {
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 33%;
+      height: 3px;
+      background-color: var(--color-primary);
+      border-radius: 8px;
+    }
   }
 }
 //
@@ -237,12 +299,12 @@ nav {
 // Leistungen
 .Leistungen {
   position: relative; // Stelle sicher, dass das Pseudo-Element relativ positioniert ist
-  background-image: url("./_res/img/lorem.jpg");
+  background-image: url('./_res/img/lorem.jpg');
   background-size: cover; // Sicherstellen, dass das Bild den gesamten Bereich abdeckt
   background-position: center; // Bild zentrieren
 
   &::before {
-    content: ""; // Erstelle ein leeres Pseudo-Element
+    content: ''; // Erstelle ein leeres Pseudo-Element
     position: absolute; // Absolute Positionierung
     top: 0; // Oben beginnen
     left: 0; // Links beginnen
@@ -289,7 +351,7 @@ nav {
   }
 
   h3 {
-    font-family: "Montserrat";
+    font-family: 'Montserrat';
     color: var(--color-white); // Textfarbe auf Weiß setzen
     position: relative; // Relativ positionieren, um über dem Overlay zu liegen
     z-index: 2; // Höherer Z-Index für den Text
@@ -303,5 +365,143 @@ nav {
   display: flex;
   justify-content: center;
   gap: 40px;
+}
+//
+
+// Portfolio
+.Portfolio {
+  &_swiper {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    margin-top: 50px;
+  }
+
+  &_swiperContainer {
+    grid-column: 1/13;
+  }
+
+  &_container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 40px;
+  }
+
+  &_inner {
+    grid-column: 2/12;
+  }
+}
+//
+
+// Swiper
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper {
+  width: 100%;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.swiper-slide {
+  background-size: cover;
+  background-position: center;
+}
+
+.mySwiper2 {
+  height: 600px;
+  width: 100%;
+}
+
+.mySwiper {
+  height: 20%;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+
+.mySwiper .swiper-slide {
+  width: 25%;
+  height: 100%;
+  opacity: 0.4;
+}
+
+.mySwiper .swiper-slide-thumb-active {
+  opacity: 1;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+// Kontakt
+.Kontakt {
+  &_container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 40px;
+    margin-bottom: 50px;
+  }
+
+  &_inner {
+    grid-column: 3/11;
+  }
+
+  iframe {
+    position: relative; /* Relativ positioniert, um sicherzustellen, dass es darunter bleibt */
+    z-index: 0; /* Iframe bleibt unter dem Hintergrundbild */
+  }
+
+  &_map {
+    position: relative; /* Position für das Hintergrundbild */
+    width: 600px; /* Breite des Containers */
+    height: 450px; /* Höhe des Containers */
+    overflow: hidden; /* Versteckt alles, was über die Containergröße hinausgeht */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+  }
+
+  &_bg {
+    position: absolute; /* Absolut positioniert über dem Iframe */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    // background-color: white;
+    background-image: url('./_res/img/map.jpeg'); /* Pfad zum Hintergrundbild */
+    background-size: cover; /* Bild skaliert, um den Container zu füllen */
+    background-position: center; /* Zentriert das Hintergrundbild */
+    opacity: 0.93; /* Setzt die Opazität des Hintergrundbildes */
+    z-index: 1; /* Stellt sicher, dass es über dem Iframe liegt */
+  }
+
+  &_btn {
+    position: absolute; /* Absolut positioniert, um es über der Karte zu platzieren */
+
+    // cursor: pointer; /* Zeigt den Cursor als Hand */
+    z-index: 2; /* Über dem Hintergrundbild */
+  }
 }
 //

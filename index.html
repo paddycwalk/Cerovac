@@ -9,6 +9,10 @@
       content="Cerovac GmbH KFZ-Techniker-Meisterbetrieb"
     />
     <meta name="keywords" content="Cerovac GmbH KFZ-Techniker-Meisterbetrieb" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="main.css" />
     <link
       rel="shortcut icon"
@@ -35,7 +39,7 @@
       <div class="Header_container">
         <div class="Header_intro">
           <h1 class="Hl1 -bold800">Willkommen bei Cerovac GmbH</h1>
-          <h2 class="Hl3 -bold500">
+          <h2 class="Hl3 -bold500 ff-m">
             Ihre Experten für Oldtimer-Restaurierung und -Pflege
           </h2>
           <a href="#leistungen" class="Link Btn">Mehr erfahren</a>
@@ -46,7 +50,7 @@
       <section class="Section Ueberuns fade" id="ueberuns">
         <div class="Ueberuns_container">
           <div class="Ueberuns_left Intro">
-            <h2 class="Hl2">Über uns</h2>
+            <h2 class="Hl2 Ueberuns_hdl">Über uns</h2>
             <p>
               Herzlich willkommen bei Cerovac GmbH, Ihrer Fachwerkstatt für
               Oldtimer und klassische Fahrzeuge. Seit über 25 Jahren teilen wir
@@ -64,6 +68,11 @@
           </div>
           <div class="Ueberuns_right">
             <img src="./_res/img/lorem1.png" alt="Lorem ipsum" />
+
+            <div class="Ueberuns_badge -bold700">
+              <span class="-bold800 Hl2">25</span>
+              <p>Jahre Erfahrung</p>
+            </div>
           </div>
         </div>
       </section>
@@ -111,31 +120,118 @@
     <main>
       <section class="Section Portfolio fade" id="portfolio">
         <div class="Intro">
-          <h2 class="Hl2">Unser Portfolio</h2>
-          <p>
-            Werfen Sie einen Blick auf unsere bisherigen Arbeiten! In den
-            letzten Jahren durften wir zahlreiche einzigartige Projekte
-            realisieren. Ob historische Limousinen, klassische Sportwagen oder
-            seltene Sammlerstücke – wir haben Fahrzeuge unterschiedlichster
-            Marken und Modelle wieder auf die Straße gebracht. Jedes Projekt
-            wird mit höchster Präzision und Sorgfalt durchgeführt, um den
-            individuellen Charakter jedes Oldtimers zu bewahren. Entdecken Sie
-            einige unserer erfolgreich abgeschlossenen Restaurationen und lassen
-            Sie sich inspirieren.
-          </p>
+          <div class="Portfolio_container">
+            <div class="Portfolio_inner">
+              <h2 class="Hl2">Unser Portfolio</h2>
+              <p>
+                Werfen Sie einen Blick auf unsere bisherigen Arbeiten! In den
+                letzten Jahren durften wir zahlreiche einzigartige Projekte
+                realisieren. Ob historische Limousinen, klassische Sportwagen
+                oder seltene Sammlerstücke – wir haben Fahrzeuge
+                unterschiedlichster Marken und Modelle wieder auf die Straße
+                gebracht. Jedes Projekt wird mit höchster Präzision und Sorgfalt
+                durchgeführt, um den individuellen Charakter jedes Oldtimers zu
+                bewahren. Entdecken Sie einige unserer erfolgreich
+                abgeschlossenen Restaurationen und lassen Sie sich inspirieren.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="Portfolio_swiper">
+          <div class="Portfolio_swiperContainer">
+            <div
+              style="
+                --swiper-navigation-color: #fff;
+                --swiper-pagination-color: #fff;
+              "
+              class="swiper mySwiper2"
+            >
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="./_res/img/auto1.jpg" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./_res/img/auto2.jpg" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./_res/img/auto3.jpg" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./_res/img/auto4.jpg" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./_res/img/auto5.jpg" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./_res/img/auto6.jpg" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./_res/img/auto7.jpg" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./_res/img/auto8.jpg" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./_res/img/auto9.jpg" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./_res/img/auto10.jpg" alt="" />
+                </div>
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+            <div thumbsSlider="" class="swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="./_res/img/auto1.jpg" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./_res/img/auto2.jpg" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./_res/img/auto3.jpg" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./_res/img/auto4.jpg" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./_res/img/auto5.jpg" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./_res/img/auto6.jpg" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./_res/img/auto7.jpg" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./_res/img/auto8.jpg" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./_res/img/auto9.jpg" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./_res/img/auto10.jpg" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
+
       <section class="Section Kontakt fade" id="kontakt">
-        <div class="Intro">
-          <h2 class="Hl2">Kontakt</h2>
-          <p>
-            Haben Sie Fragen oder möchten Sie Ihr Fahrzeug in unsere Obhut
-            geben? Wir freuen uns, von Ihnen zu hören! Besuchen Sie uns gerne in
-            unserer Werkstatt, rufen Sie uns an oder schreiben Sie uns eine
-            E-Mail. Unser freundliches Team steht Ihnen jederzeit zur Verfügung,
-            um Ihre Anliegen zu besprechen oder einen persönlichen
-            Beratungstermin zu vereinbaren.
-          </p>
+        <div class="Intro Kontakt_container Intro-center">
+          <div class="Kontakt_inner">
+            <h2 class="Hl2">Kontakt</h2>
+            <p>
+              Haben Sie Fragen oder möchten Sie Ihr Fahrzeug in unsere Obhut
+              geben? Wir freuen uns, von Ihnen zu hören! Besuchen Sie uns gerne
+              in unserer Werkstatt, rufen Sie uns an oder schreiben Sie uns eine
+              E-Mail. Unser freundliches Team steht Ihnen jederzeit zur
+              Verfügung, um Ihre Anliegen zu besprechen oder einen persönlichen
+              Beratungstermin zu vereinbaren.
+            </p>
+          </div>
         </div>
         <h2>Öffnungszeiten:</h2>
         <p>08:00 Uhr - 12:00 Uhr</p>
@@ -157,21 +253,46 @@
           class="Icon"
         />
       </a>
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4403.538884335844!2d9.196407677459984!3d48.49126572647052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4799f31e575c3bef%3A0x8909707075bae720!2sCerovac%20GmbH%20KFZ-Techniker-Meisterbetrieb!5e1!3m2!1sde!2sde!4v1726666002665!5m2!1sde!2sde"
-        width="600"
-        height="450"
-        title="Google Maps"
-        style="border: 0"
-        allowfullscreen
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-      ></iframe>
+      <div class="Kontakt_map">
+        <div class="Kontakt_bg"></div>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4403.538884335844!2d9.196407677459984!3d48.49126572647052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4799f31e575c3bef%3A0x8909707075bae720!2sCerovac%20GmbH%20KFZ-Techniker-Meisterbetrieb!5e1!3m2!1sde!2sde!4v1726666002665!5m2!1sde!2sde"
+          width="600"
+          height="450"
+          title="Google Maps"
+          style="border: 0"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+        <button class="Kontakt_btn Btn">Karte bedienen</button>
+      </div>
       <footer class="Footer fade Section">
         <a href="/impressum.html" class="Link">Impressum</a>
         <a href="/datenschutz.html" class="Link">Datenschutz</a>
       </footer>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper('.mySwiper', {
+        loop: true,
+        spaceBetween: 10,
+        slidesPerView: 4,
+        freeMode: true,
+        watchSlidesProgress: true,
+      });
+      var swiper2 = new Swiper('.mySwiper2', {
+        loop: true,
+        spaceBetween: 10,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        thumbs: {
+          swiper: swiper,
+        },
+      });
+    </script>
     <script src="./main.js"></script>
     <script
       async
