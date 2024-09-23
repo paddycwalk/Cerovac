@@ -1,4 +1,4 @@
-@import './fonts.scss';
+@import "./fonts.scss";
 
 * {
   margin: 0;
@@ -18,9 +18,10 @@ html {
 }
 
 body {
+  // background: linear-gradient(135deg, #0d0d0d, #333333, #2c2c2c, #1a1a1a);
   background: linear-gradient(135deg, #0d0d0d, #333333, #2c2c2c, #1a1a1a);
   color: var(--color-white);
-  font-family: 'Montserrat', Helvetica, sans-serif;
+  font-family: "Montserrat", Helvetica, sans-serif;
   font-weight: 400;
   overflow-x: hidden;
 }
@@ -39,8 +40,8 @@ body {
 
 .animated-bg {
   background: linear-gradient(270deg, #0d0d0d, #222222, #292929, #0a0a0a);
-  background-size: 400% 400%; /* Verkleinert den Verlauf für einen intensiveren Effekt */
-  animation: gradient-animation 8s ease infinite; /* Schneller animieren */
+  background-size: 400% 400%;
+  animation: gradient-animation 8s ease infinite;
   position: absolute;
   top: 0;
   left: 0;
@@ -82,9 +83,7 @@ img {
     cursor: pointer;
     color: var(--color-white);
     transform: scale(1.05);
-    background-color: var(
-      --color-primary-dark
-    ); /* Ändere die Farbe beim Hover */
+    background-color: var(--color-primary-dark);
   }
 }
 
@@ -113,16 +112,18 @@ img {
 
 .Header {
   height: 100vh;
-  background-image: url('./_res/img/lorem.jpg');
+  // background-image: url("./_res/img/lorem.jpg");
+  background-image: url("./_res/img/auto14.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   justify-content: center;
   align-items: flex-end;
   position: relative;
+  background-position: center;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -131,9 +132,9 @@ img {
     background: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0.2) 0%,
-      /* Oben fast transparent */ rgba(0, 0, 0, 1) 100% /* Unten dunkler */
+      rgba(0, 0, 0, 1) 100%
     );
-    z-index: 1; /* Overlay unter dem Text */
+    z-index: 1;
   }
 
   &_container {
@@ -147,24 +148,28 @@ img {
 
   &_intro {
     opacity: 0;
-    transform: translateY(20px); /* Startpunkt 20px unter der Zielposition */
-    animation: fadeInUp 0.8s ease-in-out forwards; /* Dauer und Typ der Animation */
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-in-out forwards;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 16px;
-    margin-bottom: 180px; /* Abstand zum unteren Ende des Containers */
+    // gap: 16px;
+    margin-bottom: 180px;
+  }
+
+  &_btn {
+    margin-top: 24px;
   }
 }
 
 @keyframes fadeInUp {
   0% {
     opacity: 0;
-    transform: translateY(40px); /* Startpunkt */
+    transform: translateY(40px);
   }
   100% {
     opacity: 1;
-    transform: translateY(0); /* Endpunkt bleibt zentriert */
+    transform: translateY(0);
   }
 }
 
@@ -189,9 +194,9 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  opacity: 0; /* Unsichtbar beim Start */
-  transform: translateY(-100%); /* Startposition außerhalb des Viewports */
-  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Animation für Position und Opazität */
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
   position: fixed;
   top: 0;
   left: 0;
@@ -203,13 +208,13 @@ nav {
 }
 
 nav.show {
-  transform: translateY(0); /* Navigation fährt rein */
-  opacity: 1; /* Navigation wird eingeblendet */
+  transform: translateY(0);
+  opacity: 1;
 }
 
 nav.hide {
-  transform: translateY(-100%); /* Navigation fährt nach oben raus */
-  opacity: 0; /* Navigation wird ausgeblendet */
+  transform: translateY(-100%);
+  opacity: 0;
 }
 
 .Section {
@@ -283,7 +288,7 @@ nav.hide {
     display: inline-block;
 
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       left: 0;
       bottom: 0;
@@ -298,20 +303,20 @@ nav.hide {
 
 // Leistungen
 .Leistungen {
-  position: relative; // Stelle sicher, dass das Pseudo-Element relativ positioniert ist
-  background-image: url('./_res/img/lorem.jpg');
-  background-size: cover; // Sicherstellen, dass das Bild den gesamten Bereich abdeckt
-  background-position: center; // Bild zentrieren
+  position: relative;
+  background-image: url("./_res/img/motor2.jpg");
+  background-size: cover;
+  background-position: center;
 
   &::before {
-    content: ''; // Erstelle ein leeres Pseudo-Element
-    position: absolute; // Absolute Positionierung
-    top: 0; // Oben beginnen
-    left: 0; // Links beginnen
-    width: 100%; // Vollständig breit
-    height: 100%; // Vollständig hoch
-    background-color: rgba(0, 0, 0, 0.7); // Dunkles Overlay mit 50% Opazität
-    z-index: 1; // Hinterlasse den Text über dem Overlay
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
   }
 
   &_container {
@@ -324,8 +329,8 @@ nav.hide {
     flex-wrap: wrap;
     gap: 48px;
     grid-column: 3/11;
-    position: relative; // Relativ positionieren, um den Text über das Overlay zu legen
-    z-index: 2; // Höherer Z-Index als das Overlay
+    position: relative;
+    z-index: 2;
   }
 
   &_box {
@@ -351,10 +356,9 @@ nav.hide {
   }
 
   h3 {
-    font-family: 'Montserrat';
-    color: var(--color-white); // Textfarbe auf Weiß setzen
-    position: relative; // Relativ positionieren, um über dem Overlay zu liegen
-    z-index: 2; // Höherer Z-Index für den Text
+    color: var(--color-white);
+    position: relative;
+    z-index: 2;
   }
 }
 
@@ -365,6 +369,19 @@ nav.hide {
   display: flex;
   justify-content: center;
   gap: 40px;
+  padding: 80px 0 100px 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 33.33%;
+    height: 2px; /* Höhe der Border */
+    background-color: var(--color-primary); /* Farbe der Border */
+    border-radius: 8px;
+  }
 }
 //
 
@@ -396,6 +413,8 @@ nav.hide {
 .swiper {
   width: 100%;
   height: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .swiper-slide {
@@ -405,6 +424,8 @@ nav.hide {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-size: cover;
+  background-position: center;
 }
 
 .swiper-slide img {
@@ -412,18 +433,6 @@ nav.hide {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.swiper {
-  width: 100%;
-  height: 300px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.swiper-slide {
-  background-size: cover;
-  background-position: center;
 }
 
 .mySwiper2 {
@@ -447,11 +456,13 @@ nav.hide {
   opacity: 1;
 }
 
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.mySwiper .swiper-slide {
+  // cursor: pointer;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--color-primary);
 }
 
 // Kontakt
@@ -468,15 +479,15 @@ nav.hide {
   }
 
   iframe {
-    position: relative; /* Relativ positioniert, um sicherzustellen, dass es darunter bleibt */
-    z-index: 0; /* Iframe bleibt unter dem Hintergrundbild */
+    position: relative;
+    z-index: 0;
   }
 
   &_map {
-    position: relative; /* Position für das Hintergrundbild */
-    width: 600px; /* Breite des Containers */
-    height: 450px; /* Höhe des Containers */
-    overflow: hidden; /* Versteckt alles, was über die Containergröße hinausgeht */
+    position: relative;
+    width: 600px;
+    height: 450px;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -484,24 +495,22 @@ nav.hide {
   }
 
   &_bg {
-    position: absolute; /* Absolut positioniert über dem Iframe */
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    // background-color: white;
-    background-image: url('./_res/img/map.jpeg'); /* Pfad zum Hintergrundbild */
-    background-size: cover; /* Bild skaliert, um den Container zu füllen */
-    background-position: center; /* Zentriert das Hintergrundbild */
-    opacity: 0.93; /* Setzt die Opazität des Hintergrundbildes */
-    z-index: 1; /* Stellt sicher, dass es über dem Iframe liegt */
+    background-image: url("./_res/img/map.jpeg");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.93;
+    z-index: 1;
   }
 
   &_btn {
-    position: absolute; /* Absolut positioniert, um es über der Karte zu platzieren */
-
-    // cursor: pointer; /* Zeigt den Cursor als Hand */
-    z-index: 2; /* Über dem Hintergrundbild */
+    position: absolute;
+    z-index: 2;
   }
 }
+
 //

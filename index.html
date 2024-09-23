@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cerovac GmbH</title>
+    <title>Cerovac GmbH - KFZ-Techniker-Meisterbetrieb</title>
     <meta
       name="description"
       content="Cerovac GmbH KFZ-Techniker-Meisterbetrieb"
@@ -42,7 +42,7 @@
           <h2 class="Hl3 -bold500 ff-m">
             Ihre Experten für Oldtimer-Restaurierung und -Pflege
           </h2>
-          <a href="#leistungen" class="Link Btn">Mehr erfahren</a>
+          <a href="#leistungen" class="Link Btn Header_btn">Mehr erfahren</a>
         </div>
       </div>
     </section>
@@ -239,34 +239,40 @@
         <p>Keplerstraße 18/1</p>
         <p>72762 Reutlingen</p>
         <p>Tel.: 07121/6962049</p>
+
+        <a
+          href="https://www.facebook.com/p/Cerovac-GmbH-Kfz-Meisterbetrieb-100065373613662"
+          target="_blank"
+        >
+          <img
+            src="./_res/icons/facebook.svg"
+            alt="Facebook Icon"
+            class="Icon"
+          />
+        </a>
+        <a href="https://www.instagram.com/cerovacgmbh/" target="_blank">
+          <img
+            src="./_res/icons/instagram.svg.webp"
+            alt="Instagram Icon"
+            class="Icon"
+          />
+        </a>
+        <div class="Kontakt_map">
+          <div class="Kontakt_bg"></div>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4403.538884335844!2d9.196407677459984!3d48.49126572647052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4799f31e575c3bef%3A0x8909707075bae720!2sCerovac%20GmbH%20KFZ-Techniker-Meisterbetrieb!5e1!3m2!1sde!2sde!4v1726666002665!5m2!1sde!2sde"
+            width="600"
+            height="450"
+            title="Google Maps"
+            style="border: 0"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+          <button class="Kontakt_btn Btn">Karte aktivieren</button>
+        </div>
       </section>
-      <a
-        href="https://www.facebook.com/p/Cerovac-GmbH-Kfz-Meisterbetrieb-100065373613662"
-        target="_blank"
-      >
-        <img src="./_res/icons/facebook.svg" alt="Facebook Icon" class="Icon" />
-      </a>
-      <a href="https://www.instagram.com/cerovacgmbh/" target="_blank">
-        <img
-          src="./_res/icons/instagram.svg.webp"
-          alt="Instagram Icon"
-          class="Icon"
-        />
-      </a>
-      <div class="Kontakt_map">
-        <div class="Kontakt_bg"></div>
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4403.538884335844!2d9.196407677459984!3d48.49126572647052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4799f31e575c3bef%3A0x8909707075bae720!2sCerovac%20GmbH%20KFZ-Techniker-Meisterbetrieb!5e1!3m2!1sde!2sde!4v1726666002665!5m2!1sde!2sde"
-          width="600"
-          height="450"
-          title="Google Maps"
-          style="border: 0"
-          allowfullscreen
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
-        <button class="Kontakt_btn Btn">Karte bedienen</button>
-      </div>
+
       <footer class="Footer fade Section">
         <a href="/impressum.html" class="Link">Impressum</a>
         <a href="/datenschutz.html" class="Link">Datenschutz</a>
@@ -274,19 +280,21 @@
     </main>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-      var swiper = new Swiper('.mySwiper', {
+      var swiper = new Swiper(".mySwiper", {
         loop: true,
         spaceBetween: 10,
-        slidesPerView: 4,
+        slidesPerView: 5,
         freeMode: true,
         watchSlidesProgress: true,
+        grabCursor: true,
       });
-      var swiper2 = new Swiper('.mySwiper2', {
+      var swiper2 = new Swiper(".mySwiper2", {
         loop: true,
+        grabCursor: true,
         spaceBetween: 10,
         navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
         },
         thumbs: {
           swiper: swiper,
@@ -294,10 +302,10 @@
       });
     </script>
     <script src="./main.js"></script>
-    <script
+    <!-- <script
       async
       defer
       src="https://maps.googleapis.com/maps/api/js?key=DEIN_API_KEY&callback=initMap"
-    ></script>
+    ></script> -->
   </body>
 </html>
