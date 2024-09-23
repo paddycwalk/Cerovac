@@ -219,6 +219,9 @@ img {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgb(0, 0, 0) 100%);
   z-index: 1;
 }
+.Header span {
+  white-space: nowrap;
+}
 .Header_container {
   position: relative;
   z-index: 2;
@@ -234,12 +237,36 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0 20px;
   margin-bottom: 180px;
 }
 .Header_btn {
   margin-top: 24px;
 }
 
+.scroll-down {
+  width: 24px;
+  height: 24px;
+  border-right: 3px solid var(--color-white); /* Right border for the arrow */
+  border-bottom: 3px solid var(--color-white); /* Bottom border for the arrow */
+  margin: 20px auto 0;
+  transform: rotate(45deg); /* Rotate to make the arrow point down */
+  animation: bounce 2s infinite;
+  position: absolute;
+  bottom: 80px;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0) rotate(45deg); /* Keep arrow pointed down */
+  }
+  40% {
+    transform: translateY(10px) rotate(45deg);
+  }
+  60% {
+    transform: translateY(5px) rotate(45deg);
+  }
+}
 @keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -267,7 +294,7 @@ li {
 nav {
   background-color: var(--color-white);
   color: var(--color-black);
-  padding: 8px 32px;
+  padding: 8px 42px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -282,6 +309,15 @@ nav {
   box-sizing: border-box;
   z-index: 1000;
   margin: 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+nav .List {
+  display: none;
+}
+@media (min-width: 1023px) {
+  nav .List {
+    display: flex;
+  }
 }
 
 nav.show {
@@ -317,10 +353,27 @@ nav.hide {
   filter: blur(0);
 }
 
+.slide-left {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.slide-left-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 .Ueberuns_container {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   grid-template-columns: repeat(12, 1fr);
   gap: 40px;
+}
+@media (min-width: 1023px) {
+  .Ueberuns_container {
+    display: grid;
+  }
 }
 .Ueberuns_left {
   grid-column: 1/6;
@@ -328,6 +381,8 @@ nav.hide {
 .Ueberuns_right {
   grid-column: 7/13;
   position: relative;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 .Ueberuns img {
   border-radius: 20px;
@@ -344,8 +399,8 @@ nav.hide {
   display: flex;
   flex-direction: column;
   padding: 20px;
-  border-radius: 8px;
-  border: 3px solid var(--color-primary);
+  border-radius: 20px;
+  border: 4px inset var(--color-primary);
 }
 .Ueberuns_hdl {
   position: relative;
@@ -367,6 +422,7 @@ nav.hide {
   background-image: url("./_res/img/motor2.jpg");
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
 }
 .Leistungen::before {
   content: "";
@@ -433,6 +489,9 @@ nav.hide {
   border-radius: 8px;
 }
 
+.Portfolio {
+  padding-bottom: 0;
+}
 .Portfolio_swiper {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -447,7 +506,21 @@ nav.hide {
   gap: 40px;
 }
 .Portfolio_inner {
-  grid-column: 2/12;
+  grid-column: 1/11;
+}
+.Portfolio_hdl {
+  position: relative;
+  display: inline-block;
+}
+.Portfolio_hdl::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 33%;
+  height: 3px;
+  background-color: var(--color-primary);
+  border-radius: 8px;
 }
 
 .swiper {
@@ -514,16 +587,27 @@ nav.hide {
 .Kontakt iframe {
   position: relative;
   z-index: 0;
+  width: 100%;
+}
+.Kontakt_icon {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 5px;
 }
 .Kontakt_map {
   position: relative;
-  width: 600px;
+  width: 100%;
   height: 450px;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 20px;
+  grid-column: 1/9;
+  cursor: pointer;
+}
+.Kontakt_map:hover .Kontakt_bg {
+  transform: scale(1.1);
 }
 .Kontakt_bg {
   position: absolute;
@@ -536,8 +620,29 @@ nav.hide {
   background-position: center;
   opacity: 0.93;
   z-index: 1;
+  transition: transform 0.5s ease, opacity 0.5s ease; /* Smooth transition */
 }
 .Kontakt_btn {
   position: absolute;
   z-index: 2;
+}
+.Kontakt_bottom {
+  display: flex;
+  flex-direction: column-reverse;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 70px;
+}
+@media (min-width: 1023px) {
+  .Kontakt_bottom {
+    display: grid;
+  }
+}
+.Kontakt_time {
+  grid-column: 9/13;
+}
+.Kontakt_field:not(:last-child) {
+  margin-bottom: 24px;
+}
+.Kontakt_field:first-of-type {
+  margin-top: 24px;
 }/*# sourceMappingURL=main.css.map */

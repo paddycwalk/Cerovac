@@ -1,0 +1,29 @@
+@mixin vp- {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin vp-m {
+  @media (min-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin vp-l {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin vp-xxl {
+  @media (min-width: 1400px) {
+    @content;
+  }
+}
+
+@mixin media-between($min, $max) {
+  @media (min-width: $start) and (max-width: $end) {
+    @content;
+  }
+}
