@@ -102,3 +102,9 @@ window.addEventListener("scroll", function () {
   // Modify the background position based on the scroll position
   leistungenSection.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
 });
+
+// sticky cta
+window.addEventListener("load", () => {
+  const stickyIcon = document.querySelector(".sticky-icon");
+  stickyIcon.style.opacity = "1"; // Setzt die Opazität auf 1
+});

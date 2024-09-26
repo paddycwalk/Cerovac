@@ -118,7 +118,8 @@ html {
 }
 
 body {
-  background: linear-gradient(135deg, #0d0d0d, #333333, #2c2c2c, #1a1a1a);
+  background: url("./_res/img/texture2.jpeg");
+  background-blend-mode: overlay; /* oder andere Modi wie multiply */
   color: var(--color-white);
   font-family: "Montserrat", Helvetica, sans-serif;
   font-weight: 400;
@@ -168,6 +169,54 @@ img {
   grid-template-columns: repeat(12, 1fr);
 }
 
+.sticky-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%; /* Macht es rund */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* Über allen anderen Elementen */
+  opacity: 0; /* Start unsichtbar */
+  transform: scale(0); /* Start extrem klein */
+  animation: fadeInZoom 1s ease-out forwards; /* Animation anwenden */
+  transition: transform 0.3s ease; /* Transition für Hover */
+  background-color: var(--color-primary);
+  /* Hover-Effekt */
+}
+.sticky-icon:hover {
+  transform: scale(1.2); /* Vergrößern um 20% */
+  background-color: var(--color-primary-dark);
+}
+.sticky-icon:hover img {
+  filter: brightness(0) invert(1); /* Bild weiß machen */
+}
+
+.sticky-icon img {
+  width: 50%; /* Größe des Icons */
+  height: 50%;
+  filter: brightness(0) invert(1); /* Bild weiß machen */
+}
+
+/* Keyframes für die Lade-Animation */
+@keyframes fadeInZoom {
+  0% {
+    opacity: 0; /* Start unsichtbar */
+    transform: scale(0); /* Start extrem klein */
+  }
+  60% {
+    opacity: 1; /* Vollständig sichtbar */
+    transform: scale(1.1); /* "Pop"-Effekt über die normale Größe hinaus */
+  }
+  100% {
+    opacity: 1; /* Vollständig sichtbar */
+    transform: scale(1); /* Normale Größe */
+  }
+}
 .Btn {
   border: none;
   background-color: var(--color-primary);
@@ -189,7 +238,7 @@ img {
   text-decoration: none;
 }
 .Intro h2 {
-  margin-bottom: 18px;
+  margin-bottom: 24px;
 }
 .Intro a {
   margin-top: 24px;
@@ -294,7 +343,7 @@ li {
 nav {
   background-color: var(--color-white);
   color: var(--color-black);
-  padding: 8px 42px;
+  padding: 3px 42px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -446,11 +495,18 @@ nav.hide {
   position: relative;
   z-index: 2;
 }
+.Leistungen_grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 40px;
+}
+.Leistungen_inner {
+  grid-column: 3/11;
+}
 .Leistungen_box {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 31.33%;
   text-align: center;
   align-self: flex-end;
   gap: 18px;
@@ -460,7 +516,7 @@ nav.hide {
   height: 80px;
 }
 .Leistungen_boxGrid {
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   display: grid;
   gap: 40px;
   margin-top: 60px;
@@ -490,15 +546,12 @@ nav.hide {
 }
 
 .Portfolio {
-  padding-bottom: 0;
-}
-.Portfolio_swiper {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  margin-top: 50px;
+  gap: 40px;
 }
-.Portfolio_swiperContainer {
-  grid-column: 1/13;
+.Portfolio_swiper {
+  grid-column: 1/7;
 }
 .Portfolio_container {
   display: grid;
@@ -522,6 +575,9 @@ nav.hide {
   background-color: var(--color-primary);
   border-radius: 8px;
 }
+.Portfolio .Intro {
+  grid-column: 7/13;
+}
 
 .swiper {
   width: 100%;
@@ -539,6 +595,7 @@ nav.hide {
   align-items: center;
   background-size: cover;
   background-position: center;
+  border-radius: 20px;
 }
 
 .swiper-slide img {
@@ -547,17 +604,18 @@ nav.hide {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 20px;
 }
 
 .mySwiper2 {
-  height: 600px;
+  height: 500px;
   width: 100%;
 }
 
 .mySwiper {
-  height: 20%;
+  height: 15%;
   box-sizing: border-box;
-  padding: 10px 0;
+  padding-top: 18px;
 }
 
 .mySwiper .swiper-slide {
@@ -570,6 +628,10 @@ nav.hide {
   opacity: 1;
 }
 
+.mySwiper .swiper-slide-thumb-active img {
+  border: 2px solid var(--color-primary);
+}
+
 .swiper-button-next,
 .swiper-button-prev {
   color: var(--color-primary);
@@ -580,6 +642,20 @@ nav.hide {
   grid-template-columns: repeat(12, 1fr);
   gap: 40px;
   margin-bottom: 50px;
+}
+.Kontakt_hdl {
+  position: relative;
+  display: inline-block;
+}
+.Kontakt_hdl::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 33%;
+  height: 3px;
+  background-color: var(--color-primary);
+  border-radius: 8px;
 }
 .Kontakt_inner {
   grid-column: 3/11;
