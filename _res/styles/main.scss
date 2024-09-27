@@ -401,9 +401,14 @@ nav.hide {
 }
 
 .slide-left {
-  opacity: 0;
-  transform: translateX(-100%);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  opacity: 1;
+  transform: none;
+
+  @include vp-l {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
 }
 
 .slide-left-in {
@@ -436,6 +441,8 @@ nav.hide {
 
   img {
     border-radius: 20px;
+    box-shadow: 0 0px 8px rgba(0, 0, 0, 1), 0 25px 95px rgba(0, 0, 0, 1);
+
     // clip-path: polygon(0 0, 90% 0, 100% 10%, 100% 100%, 0 100%);
   }
 
@@ -447,7 +454,7 @@ nav.hide {
     left: -30px;
     background-color: var(--color-black);
     color: var(--color-white);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1), 0 6px 20px rgba(0, 0, 0, 1);
     display: none;
     flex-direction: column;
     padding: 20px;
@@ -619,7 +626,7 @@ nav.hide {
   }
 
   &_swiper {
-    grid-column: 1/7;
+    grid-column: 1/8;
   }
 
   &_swiperContainer {
@@ -661,7 +668,7 @@ nav.hide {
   }
 
   .Intro {
-    grid-column: 7/13;
+    grid-column: 8/13;
   }
 }
 //
