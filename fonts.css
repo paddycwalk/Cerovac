@@ -68,7 +68,12 @@ h6 {
 }
 
 .Hl1 {
-  font-size: 60px;
+  font-size: 40px;
+}
+@media (min-width: 1023px) {
+  .Hl1 {
+    font-size: 60px;
+  }
 }
 
 .Hl2 {
@@ -76,7 +81,12 @@ h6 {
 }
 
 .Hl3 {
-  font-size: 28px;
+  font-size: 22px;
+}
+@media (min-width: 1023px) {
+  .Hl3 {
+    font-size: 28px;
+  }
 }
 
 .-bold500 {

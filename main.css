@@ -68,7 +68,12 @@ h6 {
 }
 
 .Hl1 {
-  font-size: 60px;
+  font-size: 40px;
+}
+@media (min-width: 1023px) {
+  .Hl1 {
+    font-size: 60px;
+  }
 }
 
 .Hl2 {
@@ -76,7 +81,12 @@ h6 {
 }
 
 .Hl3 {
-  font-size: 28px;
+  font-size: 22px;
+}
+@media (min-width: 1023px) {
+  .Hl3 {
+    font-size: 28px;
+  }
 }
 
 .-bold500 {
@@ -241,7 +251,12 @@ img {
   margin-top: 24px;
 }
 .Intro-center {
-  text-align: center;
+  text-align: left;
+}
+@media (min-width: 1023px) {
+  .Intro-center {
+    text-align: center;
+  }
 }
 
 .Header {
@@ -284,10 +299,24 @@ img {
   flex-direction: column;
   align-items: center;
   padding: 0 20px;
-  margin-bottom: 230px;
+  margin-bottom: 150px;
+  text-align: center;
+}
+@media (min-width: 1023px) {
+  .Header_intro {
+    margin-bottom: 230px;
+  }
+}
+.Header_intro h2 {
+  margin-top: 8px;
+}
+@media (min-width: 1023px) {
+  .Header_intro h2 {
+    margin-top: 4px;
+  }
 }
 .Header_btn {
-  margin-top: 24px;
+  margin-top: 32px;
 }
 
 .scroll-down {
@@ -403,7 +432,17 @@ nav.hide {
 }
 
 .Section {
-  padding: 120px 0;
+  padding: 60px 0;
+}
+@media (min-width: 1023px) {
+  .Section {
+    padding: 100px 0;
+  }
+}
+@media (min-width: 1200px) {
+  .Section {
+    padding: 120px 0;
+  }
 }
 .Section-noPadding {
   padding: 0;
@@ -468,11 +507,16 @@ nav.hide {
   background-color: var(--color-black);
   color: var(--color-white);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.3);
-  display: flex;
+  display: none;
   flex-direction: column;
   padding: 20px;
   border-radius: 20px;
   border: 4px inset var(--color-primary);
+}
+@media (min-width: 1023px) {
+  .Ueberuns_badge {
+    display: flex;
+  }
 }
 .Ueberuns_hdl {
   position: relative;
@@ -535,10 +579,21 @@ nav.hide {
 .Leistungen_grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 40px;
+  gap: 0px;
+  padding: 0 20px;
+}
+@media (min-width: 1023px) {
+  .Leistungen_grid {
+    gap: 40px;
+  }
 }
 .Leistungen_inner {
-  grid-column: 4/10;
+  grid-column: 1/13;
+}
+@media (min-width: 1200px) {
+  .Leistungen_inner {
+    grid-column: 4/10;
+  }
 }
 .Leistungen_box {
   display: flex;
@@ -595,12 +650,11 @@ nav.hide {
   display: flex;
   flex-direction: column-reverse;
   grid-template-columns: repeat(12, 1fr);
-  gap: 0;
+  gap: 40px;
 }
 @media (min-width: 1023px) {
   .Portfolio {
     display: grid;
-    gap: 40px;
   }
 }
 .Portfolio_swiper {
@@ -617,7 +671,12 @@ nav.hide {
   }
 }
 .Portfolio_inner {
-  grid-column: 1/11;
+  grid-column: 1/13;
+}
+@media (min-width: 1023px) {
+  .Portfolio_inner {
+    grid-column: 1/11;
+  }
 }
 .Portfolio_hdl {
   position: relative;
@@ -721,7 +780,12 @@ nav.hide {
   border-radius: 8px;
 }
 .Kontakt_inner {
-  grid-column: 3/11;
+  grid-column: 1/13;
+}
+@media (min-width: 1023px) {
+  .Kontakt_inner {
+    grid-column: 3/11;
+  }
 }
 .Kontakt iframe {
   position: relative;

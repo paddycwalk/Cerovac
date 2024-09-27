@@ -157,7 +157,11 @@ img {
   }
 
   &-center {
-    text-align: center;
+    text-align: left;
+
+    @include vp-m {
+      text-align: center;
+    }
   }
 }
 
@@ -210,11 +214,24 @@ img {
     align-items: center;
     // gap: 16px;
     padding: 0 20px;
-    margin-bottom: 230px;
+    margin-bottom: 150px;
+    text-align: center;
+
+    @include vp-m {
+      margin-bottom: 230px;
+    }
+
+    h2 {
+      margin-top: 8px;
+
+      @include vp-m {
+        margin-top: 4px;
+      }
+    }
   }
 
   &_btn {
-    margin-top: 24px;
+    margin-top: 32px;
   }
 }
 
@@ -347,7 +364,15 @@ nav.hide {
 }
 
 .Section {
-  padding: 120px 0;
+  padding: 60px 0;
+
+  @include vp-m {
+    padding: 100px 0;
+  }
+
+  @include vp-l {
+    padding: 120px 0;
+  }
 
   &-noPadding {
     padding: 0;
@@ -423,11 +448,15 @@ nav.hide {
     background-color: var(--color-black);
     color: var(--color-white);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.3);
-    display: flex;
+    display: none;
     flex-direction: column;
     padding: 20px;
     border-radius: 20px;
     border: 4px inset var(--color-primary);
+
+    @include vp-m {
+      display: flex;
+    }
   }
 
   &_hdl {
@@ -500,11 +529,20 @@ nav.hide {
   &_grid {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    gap: 40px;
+    gap: 0px;
+    padding: 0 20px;
+
+    @include vp-m {
+      gap: 40px;
+    }
   }
 
   &_inner {
-    grid-column: 4/10;
+    grid-column: 1/13;
+
+    @include vp-l {
+      grid-column: 4/10;
+    }
   }
 
   &_box {
@@ -574,11 +612,10 @@ nav.hide {
   display: flex;
   flex-direction: column-reverse;
   grid-template-columns: repeat(12, 1fr);
-  gap: 0;
+  gap: 40px;
 
   @include vp-m {
     display: grid;
-    gap: 40px;
   }
 
   &_swiper {
@@ -600,7 +637,11 @@ nav.hide {
   }
 
   &_inner {
-    grid-column: 1/11;
+    grid-column: 1/13;
+
+    @include vp-m {
+      grid-column: 1/11;
+    }
   }
 
   &_hdl {
@@ -716,7 +757,11 @@ nav.hide {
   }
 
   &_inner {
-    grid-column: 3/11;
+    grid-column: 1/13;
+
+    @include vp-m {
+      grid-column: 3/11;
+    }
   }
 
   iframe {
