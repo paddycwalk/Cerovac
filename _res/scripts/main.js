@@ -1,3 +1,5 @@
+console.log("loaded");
+
 // global animation
 document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll(".fade");

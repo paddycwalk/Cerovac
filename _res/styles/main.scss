@@ -20,7 +20,7 @@ html {
 
 body {
   // background: linear-gradient(135deg, #0d0d0d, #333333, #2c2c2c, #1a1a1a);
-  background: url("./_res/img/texture2.jpeg");
+  background: url("../img/texture2.jpeg");
   background-blend-mode: overlay;
   color: var(--color-white);
   font-family: "Montserrat", Helvetica, sans-serif;
@@ -168,7 +168,7 @@ img {
 .Header {
   height: 100vh;
   // background-image: url("./_res/img/lorem.jpg");
-  background-image: url("./_res/img/auto14.jpg");
+  background-image: url("../img/auto14.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -480,7 +480,7 @@ nav.hide {
 // Leistungen
 .Leistungen {
   position: relative;
-  background-image: url("./_res/img/motor2.jpg");
+  background-image: url("../img/motor2.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -801,7 +801,7 @@ nav.hide {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("./_res/img/map.jpeg");
+    background-image: url("../img/map.jpeg");
     background-size: cover;
     background-position: center;
     opacity: 0.93;

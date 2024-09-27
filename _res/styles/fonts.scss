@@ -1,10 +1,12 @@
+@import "./mixins.scss";
+
 /* vollkorn-regular - latin */
 @font-face {
   font-display: swap;
   font-family: "Vollkorn";
   font-style: normal;
   font-weight: 400;
-  src: url("./_res/fonts/vollkorn-v23-latin-regular.woff2") format("woff2");
+  src: url("../fonts/vollkorn-v23-latin-regular.woff2") format("woff2");
 }
 /* vollkorn-500 - latin */
 @font-face {
@@ -12,7 +14,7 @@
   font-family: "Vollkorn";
   font-style: normal;
   font-weight: 500;
-  src: url("./_res/fonts/vollkorn-v23-latin-500.woff2") format("woff2");
+  src: url("../fonts/vollkorn-v23-latin-500.woff2") format("woff2");
 }
 /* vollkorn-600 - latin */
 @font-face {
@@ -20,7 +22,7 @@
   font-family: "Vollkorn";
   font-style: normal;
   font-weight: 600;
-  src: url("./_res/fonts/vollkorn-v23-latin-600.woff2") format("woff2");
+  src: url("../fonts/vollkorn-v23-latin-600.woff2") format("woff2");
 }
 /* vollkorn-700 - latin */
 @font-face {
@@ -28,7 +30,7 @@
   font-family: "Vollkorn";
   font-style: normal;
   font-weight: 700;
-  src: url("./_res/fonts/vollkorn-v23-latin-700.woff2") format("woff2");
+  src: url("../fonts/vollkorn-v23-latin-700.woff2") format("woff2");
 }
 /* vollkorn-800 - latin */
 @font-face {
@@ -36,7 +38,7 @@
   font-family: "Vollkorn";
   font-style: normal;
   font-weight: 800;
-  src: url("./_res/fonts/vollkorn-v23-latin-800.woff2") format("woff2");
+  src: url("../fonts/vollkorn-v23-latin-800.woff2") format("woff2");
 }
 /* vollkorn-900 - latin */
 @font-face {
@@ -44,16 +46,18 @@
   font-family: "Vollkorn";
   font-style: normal;
   font-weight: 900;
-  src: url("./_res/fonts/vollkorn-v23-latin-900.woff2") format("woff2");
+  src: url("../fonts/vollkorn-v23-latin-900.woff2") format("woff2");
 }
+
 /* montserrat-regular - latin */
 @font-face {
   font-display: swap;
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
-  src: url("./_res/fonts/montserrat-v26-latin-regular.woff2") format("woff2");
+  src: url("../fonts/montserrat-v26-latin-regular.woff2") format("woff2");
 }
+
 .ff-m {
   font-family: "Montserrat";
 }
@@ -69,9 +73,8 @@ h6 {
 
 .Hl1 {
   font-size: 40px;
-}
-@media (min-width: 1023px) {
-  .Hl1 {
+
+  @include vp-m {
     font-size: 60px;
   }
 }
@@ -82,9 +85,8 @@ h6 {
 
 .Hl3 {
   font-size: 22px;
-}
-@media (min-width: 1023px) {
-  .Hl3 {
+
+  @include vp-m {
     font-size: 28px;
   }
 }
@@ -107,4 +109,4 @@ h6 {
 
 .-bold900 {
   font-weight: 900;
-}/*# sourceMappingURL=fonts.css.map */
+}

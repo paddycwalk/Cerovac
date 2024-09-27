@@ -1,5 +1,17 @@
 {
+  "name": "cerovac",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "sass": "sass --watch ./_res/styles/main.scss:./dist/css/main.min.css --style compressed"
+  },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "swiper": "^11.1.14"
+  },
+  "devDependencies": {
+    "sass": "^1.79.3"
   }
 }
