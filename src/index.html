@@ -13,7 +13,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
-    <link rel="stylesheet" href="./dist/css/main.min.css" />
+    <link rel="stylesheet" href="./_res/css/main.css" />
     <link
       rel="shortcut icon"
       href="./_res/icons/favicon.ico"
@@ -358,7 +358,7 @@
     </main>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-      var swiper = new Swiper(".mySwiper", {
+      var swiper = new Swiper('.mySwiper', {
         loop: true,
         spaceBetween: 10,
         slidesPerView: 5,
@@ -366,13 +366,13 @@
         watchSlidesProgress: true,
         grabCursor: true,
       });
-      var swiper2 = new Swiper(".mySwiper2", {
+      var swiper2 = new Swiper('.mySwiper2', {
         loop: true,
         grabCursor: true,
         spaceBetween: 10,
         navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
         },
         thumbs: {
           swiper: swiper,
