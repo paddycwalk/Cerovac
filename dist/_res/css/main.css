@@ -244,6 +244,7 @@ img {
   color: inherit;
   text-decoration: none;
 }
+
 .Intro h2 {
   margin-bottom: 24px;
 }
@@ -367,6 +368,7 @@ li {
 }
 
 nav {
+  height: 60px;
   background-color: var(--color-white);
   color: var(--color-black);
   padding: 3px 42px;
@@ -392,6 +394,7 @@ nav .List {
 @media (min-width: 1023px) {
   nav .List {
     display: flex;
+    flex: none;
   }
 }
 nav .List a {
@@ -411,7 +414,7 @@ nav .List a::after {
   opacity: 0;
   transform: scaleX(0);
   transform-origin: left;
-  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, height 0.5s ease-in-out;
 }
 nav .List a:hover {
   color: var(--color-primary);
@@ -420,15 +423,63 @@ nav .List a:hover::after {
   opacity: 1;
   transform: scaleX(1);
 }
-
+nav .Burger {
+  display: flex;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 4px;
+}
+nav .Burger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--color-black);
+  transition: all 0.3s ease-in-out;
+}
+@media (min-width: 1023px) {
+  nav .Burger {
+    display: none;
+  }
+}
+nav .Burger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+nav .Burger.active span:nth-child(2) {
+  opacity: 0;
+}
+nav .Burger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
 nav.show {
   transform: translateY(0);
   opacity: 1;
 }
-
 nav.hide {
   transform: translateY(-100%);
   opacity: 0;
+}
+nav.open {
+  flex-direction: row-reverse;
+  height: fit-content;
+  padding: 22px 42px;
+}
+nav.open .List {
+  display: flex;
+  flex-direction: column;
+}
+nav.open .Logo {
+  display: none;
+}
+nav.open .Nav_top {
+  width: fit-content;
+  align-self: flex-start;
+}
+
+.Nav_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .Section {
@@ -610,6 +661,7 @@ nav.hide {
   align-self: flex-end;
   gap: 24px;
 }
+.Leistungen_box svg,
 .Leistungen_box img {
   width: 80px;
   height: 80px;
@@ -620,6 +672,7 @@ nav.hide {
   gap: 40px;
   max-width: 1500px;
   margin: 60px auto 0 auto;
+  padding: 0 20px;
 }
 .Leistungen h3 {
   color: var(--color-white);
@@ -867,6 +920,10 @@ nav.hide {
   align-items: center;
   gap: 8px;
   margin-bottom: 8px;
+}
+
+svg:hover {
+  color: var(--color-primary);
 }
 
 /*# sourceMappingURL=main.css.map */

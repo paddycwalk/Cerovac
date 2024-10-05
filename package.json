@@ -11,7 +11,7 @@
     "start": "npm-run-all build:sass --parallel watch:*",
     "build": "npm-run-all build:*"
   },
-  "author": "",
+  "author": "Patrick S",
   "license": "ISC",
   "dependencies": {
     "swiper": "^11.1.14"
