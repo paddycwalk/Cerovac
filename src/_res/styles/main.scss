@@ -622,8 +622,13 @@ nav {
 
     svg,
     img {
-      width: 80px;
-      height: 80px;
+      width: 60px;
+      height: 60px;
+
+      @include vp-l {
+        width: 80px;
+        height: 80px;
+      }
     }
   }
 

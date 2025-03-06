@@ -663,8 +663,15 @@ nav.open .Nav_top {
 }
 .Leistungen_box svg,
 .Leistungen_box img {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
+}
+@media (min-width: 1200px) {
+  .Leistungen_box svg,
+  .Leistungen_box img {
+    width: 80px;
+    height: 80px;
+  }
 }
 .Leistungen_boxGrid {
   grid-template-columns: repeat(3, 1fr);
