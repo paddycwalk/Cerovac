@@ -557,7 +557,7 @@ nav {
       position: absolute;
       left: 0;
       bottom: 0;
-      width: 33%;
+      width: 25%;
       height: 3px;
       background-color: var(--color-primary);
       border-radius: 8px;
@@ -594,7 +594,7 @@ nav {
       position: absolute;
       left: 0;
       bottom: 0;
-      width: 33%;
+      width: 20%;
       height: 3px;
       background-color: var(--color-primary);
       border-radius: 8px;
@@ -749,7 +749,7 @@ nav {
       position: absolute;
       left: 0;
       bottom: 0;
-      width: 33%;
+      width: 25%;
       height: 3px;
       background-color: var(--color-primary);
       border-radius: 8px;
@@ -825,6 +825,7 @@ nav {
 
 // Kontakt
 .Kontakt {
+  scroll-margin-top: 200px;
   &_container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);

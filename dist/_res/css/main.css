@@ -604,7 +604,7 @@ nav.open .Nav_top {
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 33%;
+  width: 25%;
   height: 3px;
   background-color: var(--color-primary);
   border-radius: 8px;
@@ -636,7 +636,7 @@ nav.open .Nav_top {
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 33%;
+  width: 20%;
   height: 3px;
   background-color: var(--color-primary);
   border-radius: 8px;
@@ -773,7 +773,7 @@ nav.open .Nav_top {
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 33%;
+  width: 25%;
   height: 3px;
   background-color: var(--color-primary);
   border-radius: 8px;
@@ -839,6 +839,9 @@ nav.open .Nav_top {
   color: var(--color-primary);
 }
 
+.Kontakt {
+  scroll-margin-top: 200px;
+}
 .Kontakt_container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
