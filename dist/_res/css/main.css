@@ -137,6 +137,10 @@ body {
   background-size: cover;
 }
 
+button {
+  font-family: inherit;
+}
+
 @keyframes gradient-animation {
   0% {
     background-position: 0% 50%;
