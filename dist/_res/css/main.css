@@ -715,7 +715,7 @@ nav.open .Nav_top {
   display: flex;
   justify-content: center;
   gap: 40px;
-  padding: 80px 0 100px 0;
+  padding: 80px 0 50px 0;
 }
 .Footer::before {
   content: "";
@@ -844,7 +844,8 @@ nav.open .Nav_top {
 }
 
 .Kontakt {
-  scroll-margin-top: 200px;
+  scroll-padding-top: 200px;
+  padding-top: 50px;
 }
 .Kontakt_container {
   display: grid;
