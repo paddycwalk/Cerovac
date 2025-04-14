@@ -232,6 +232,15 @@ img {
     }
   }
 
+  &_caption {
+    z-index: 1;
+    position: absolute;
+    top: -50px;
+    right: -100px;
+    font-size: 26px;
+    transform: rotate(8deg);
+  }
+
   &_btn {
     margin-top: 32px;
   }
@@ -904,7 +913,7 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("../img/map.jpeg");
+    background-image: url("../img/map.jpg");
     background-size: cover;
     background-position: center;
     opacity: 0.93;
