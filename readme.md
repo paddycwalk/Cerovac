@@ -8,4 +8,4 @@ https://www.e-recht24.de/
 - "save the classic" - quote -- erledigt
 - Kontakt - Bild ändern zu Weltkarte -- erledigt
 - Facebook raus, Instagram anders darstellen -- halb
-- Alter der Werkstatt einbauen -check
+- Alter der Werkstatt einbauen -check1
