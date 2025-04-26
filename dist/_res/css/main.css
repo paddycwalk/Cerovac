@@ -287,15 +287,6 @@ img {
 .Header span {
   white-space: nowrap;
 }
-.Header .Logo {
-  position: absolute;
-  top: 200px;
-  left: 200px;
-}
-.Header .Logo svg {
-  width: 400px;
-  height: 100%;
-}
 .Header_container {
   position: relative;
   z-index: 2;
@@ -571,6 +562,25 @@ nav.open .Nav_top {
   transform: translateX(0);
 }
 
+.Ueberuns .Logo {
+  position: absolute;
+  top: -50px;
+  right: 0px;
+}
+@media (min-width: 1023px) {
+  .Ueberuns .Logo {
+    top: -90px;
+  }
+}
+.Ueberuns .Logo svg {
+  width: 100px;
+  height: 100%;
+}
+@media (min-width: 768px) {
+  .Ueberuns .Logo svg {
+    width: 200px;
+  }
+}
 .Ueberuns_container {
   display: flex;
   flex-direction: column;

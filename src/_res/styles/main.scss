@@ -216,17 +216,6 @@ img {
     white-space: nowrap;
   }
 
-  .Logo {
-    position: absolute;
-    top: 200px;
-    left: 200px;
-
-    svg {
-      width: 400px;
-      height: 100%;
-    }
-  }
-
   &_container {
     position: relative;
     z-index: 2;
@@ -543,6 +532,24 @@ nav {
 
 // Über uns
 .Ueberuns {
+  .Logo {
+    position: absolute;
+    top: -50px;
+    right: 0px;
+
+    @include vp-m {
+      top: -90px;
+    }
+
+    svg {
+      width: 100px;
+      height: 100%;
+
+      @include vp- {
+        width: 200px;
+      }
+    }
+  }
   &_container {
     display: flex;
     flex-direction: column;
