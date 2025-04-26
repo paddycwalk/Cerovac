@@ -124,3 +124,12 @@ function setupScrollHandling() {
     }
   });
 }
+
+// google btn
+document.querySelector('.Kontakt_map').addEventListener('click', function () {
+  const btn = document.querySelector('.Kontakt_btn');
+  const background = document.querySelector('.Kontakt_bg');
+  background.style.opacity = '0';
+  background.style.pointerEvents = 'none';
+  btn.style.display = 'none';
+});
