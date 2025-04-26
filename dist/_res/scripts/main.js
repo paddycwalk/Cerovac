@@ -1,5 +1,3 @@
-console.log('loaded');
-
 // global variables
 const burger = document.querySelector('.Burger');
 const nav = document.querySelector('nav');
