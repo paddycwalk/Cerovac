@@ -114,8 +114,13 @@ function setupScrollHandling() {
 
     // Paralax scroll
     const leistungenSection = document.querySelector('.Leistungen');
-    if (leistungenSection) {
-      leistungenSection.style.backgroundPositionY = `${scrollTop * 0.5}px`;
+    if (leistungenSection && window.innerWidth > 1022) {
+      // Überprüft, ob es sich nicht um ein mobiles Gerät handelt (z.B. Bildschirmbreite > 768px)
+      window.addEventListener('scroll', function () {
+        const scrollTop =
+          window.pageYOffset || document.documentElement.scrollTop;
+        leistungenSection.style.backgroundPositionY = `${scrollTop * 0.5}px`;
+      });
     }
   });
 }

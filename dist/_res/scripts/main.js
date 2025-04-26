@@ -1,3 +1,5 @@
+console.log('loaded');
+
 // global variables
 const burger = document.querySelector('.Burger');
 const nav = document.querySelector('nav');
@@ -112,17 +114,13 @@ function setupScrollHandling() {
 
     // Paralax scroll
     const leistungenSection = document.querySelector('.Leistungen');
-    if (leistungenSection) {
-      leistungenSection.style.backgroundPositionY = `${scrollTop * 0.5}px`;
+    if (leistungenSection && window.innerWidth > 1022) {
+      // Überprüft, ob es sich nicht um ein mobiles Gerät handelt (z.B. Bildschirmbreite > 768px)
+      window.addEventListener('scroll', function () {
+        const scrollTop =
+          window.pageYOffset || document.documentElement.scrollTop;
+        leistungenSection.style.backgroundPositionY = `${scrollTop * 0.5}px`;
+      });
     }
   });
 }
-
-// google btn
-document.querySelector('.Kontakt_map').addEventListener('click', function () {
-  const btn = document.querySelector('.Kontakt_btn');
-  const background = document.querySelector('.Kontakt_bg');
-  background.style.opacity = '0';
-  background.style.pointerEvents = 'none';
-  btn.style.display = 'none';
-});
