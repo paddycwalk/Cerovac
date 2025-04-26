@@ -857,6 +857,7 @@ nav {
 }
 .mySwiper .swiper-slide-thumb-active img {
   border: 2px solid var(--color-primary);
+  box-sizing: border-box;
 }
 
 .swiper-button-next,
