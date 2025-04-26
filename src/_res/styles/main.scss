@@ -19,33 +19,12 @@ html {
 }
 
 body {
-  // background-image: url('../img/structure.jpg');
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)),
     url('../img/structure.jpg');
-  // background-size: cover;
   background-position: center;
-  // background: linear-gradient(135deg, #0d0d0d, #333333, #2c2c2c, #1a1a1a);
-  // background-color: #2b2b2b; /* dunkles Asphaltgrau */
-  // background-image: repeating-linear-gradient(
-  //     90deg,
-  //     rgba(255, 255, 255, 0.8) 0 10px,
-  //     /* Streifen */ transparent 10px 30px
-  //   ),
-  //   radial-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-  //   radial-gradient(rgba(255, 255, 255, 0.01) 1px, transparent 1px);
-  // background-size: 100% 4px, /* Streifen: Höhe 4px */ 20px 20px,
-  //   /* Struktur 1 */ 40px 40px; /* Struktur 2 */
-  // background-position: center center, /* Streifen zentriert */ 0 0, 10px 10px;
-  // background-repeat: repeat;
-
-  // background: url('../img/background.jpg');
-  // background-blend-mode: overlay;
   color: var(--color-white);
   font-family: 'Montserrat', Helvetica, sans-serif;
   font-weight: 400;
-  // overflow-x: hidden;
-  // background-attachment: fixed;
-  // background-size: cover;
 }
 
 button {
@@ -619,7 +598,7 @@ nav {
 // Leistungen
 .Leistungen {
   position: relative;
-  background-image: url('../img/motor2.jpg');
+  background-image: url('../img/motor.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -878,10 +857,6 @@ nav {
 }
 .mySwiper .swiper-slide-thumb-active img {
   border: 2px solid var(--color-primary);
-}
-
-.mySwiper .swiper-slide {
-  // cursor: pointer;
 }
 
 .swiper-button-next,
