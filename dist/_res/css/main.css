@@ -127,14 +127,11 @@ html {
 }
 
 body {
-  background: url("../img/background.jpg");
-  background-blend-mode: overlay;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url("../img/structure.jpg");
+  background-position: center;
   color: var(--color-white);
   font-family: "Montserrat", Helvetica, sans-serif;
   font-weight: 400;
-  overflow-x: hidden;
-  background-attachment: fixed;
-  background-size: cover;
 }
 
 button {
@@ -667,14 +664,6 @@ nav.open .Nav_top {
   position: relative;
   z-index: 2;
 }
-.Leistungen_boxContainer {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 48px;
-  grid-column: 1/4;
-  position: relative;
-  z-index: 2;
-}
 .Leistungen_grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -694,37 +683,55 @@ nav.open .Nav_top {
     grid-column: 4/10;
   }
 }
+.Leistungen_boxGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 60px auto 0 auto;
+  padding: 0 20px;
+}
+@media (min-width: 768px) {
+  .Leistungen_boxGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1023px) {
+  .Leistungen_boxGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.Leistungen_boxContainer {
+  display: contents;
+}
 .Leistungen_box {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   align-items: center;
-  width: 31%;
+  justify-content: space-between;
   text-align: center;
-  align-self: flex-end;
+  z-index: 1;
+  border-radius: 8px;
   gap: 24px;
+  height: 100%;
 }
-.Leistungen_box svg,
-.Leistungen_box img {
+.Leistungen_box img,
+.Leistungen_box svg {
   width: 60px;
   height: 60px;
 }
 @media (min-width: 1200px) {
-  .Leistungen_box svg,
-  .Leistungen_box img {
+  .Leistungen_box img,
+  .Leistungen_box svg {
     width: 80px;
     height: 80px;
   }
 }
-.Leistungen_boxGrid {
-  grid-template-columns: repeat(3, 1fr);
-  display: grid;
-  gap: 40px;
-  max-width: 1500px;
-  margin: 60px auto 0 auto;
-  padding: 0 20px;
-}
-.Leistungen h3 {
+.Leistungen_box h3 {
   color: var(--color-white);
+  font-size: 1.2rem;
+  margin-top: 20px;
+  margin-bottom: 0;
   position: relative;
   z-index: 2;
 }
@@ -982,9 +989,19 @@ svg:hover {
 .Social {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 24px;
   padding-top: 0;
   padding-bottom: 20px;
+  flex-direction: column;
+}
+@media (min-width: 1023px) {
+  .Social {
+    flex-direction: row;
+  }
+}
+.Social .Hl3 {
+  text-align: center;
 }
 
 /*# sourceMappingURL=main.css.map */

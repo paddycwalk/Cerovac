@@ -1,24 +1,28 @@
 console.log('loaded');
 
-// burger nav
-document.addEventListener('DOMContentLoaded', function () {
-  const burger = document.querySelector('.Burger');
-  const nav = document.querySelector('nav');
+// global variables
+const burger = document.querySelector('.Burger');
+const nav = document.querySelector('nav');
+const kontaktMap = document.querySelector('.Kontakt_map');
+const kontaktBtn = document.querySelector('.Kontakt_btn');
+const kontaktBg = document.querySelector('.Kontakt_bg');
+const counter = document.querySelector('.Ueberuns_counter');
+const badge = document.querySelector('.Ueberuns_badge');
 
+// Burger Navigation
+if (burger && nav) {
   burger.addEventListener('click', function () {
     nav.classList.toggle('open');
     burger.classList.toggle('active');
   });
-});
+}
 
-// global animation
-document.addEventListener('DOMContentLoaded', () => {
+// Global fade-in animation
+document.addEventListener('DOMContentLoaded', function () {
   const sections = document.querySelectorAll('.fade');
   const slideLeftElement = document.querySelector('.slide-left');
 
-  const observerOptions = {
-    threshold: 0.2,
-  };
+  const observerOptions = { threshold: 0.2 };
 
   const fadeInOnScroll = (entries, observer) => {
     entries.forEach((entry) => {
@@ -33,91 +37,85 @@ document.addEventListener('DOMContentLoaded', () => {
   sections.forEach((section) => observer.observe(section));
 
   // Slide-left observer
-  const slideLeftObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('slide-left-in');
-        observer.unobserve(entry.target); // Optional: Stop observing once the slide-in is applied
+  if (slideLeftElement) {
+    const slideLeftObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('slide-left-in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+    slideLeftObserver.observe(slideLeftElement);
+  }
+
+  // Counter
+  if (counter && badge) {
+    let count = 0;
+    const target = 25;
+    const speed = 100;
+
+    const updateCounter = () => {
+      if (count < target) {
+        count++;
+        counter.textContent = count;
+        setTimeout(updateCounter, speed);
+      } else {
+        counter.textContent = target;
+      }
+    };
+
+    const counterObserver = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        updateCounter();
+        counterObserver.disconnect();
       }
     });
-  }, observerOptions);
 
-  slideLeftObserver.observe(slideLeftElement);
-});
-
-// nav
-let lastScrollTop = 0;
-const nav = document.querySelector('nav');
-
-// Beim Laden der Seite wird die Klasse 'show' nach einer kleinen Verzögerung gesetzt
-window.addEventListener('load', () => {
-  setTimeout(() => {
-    nav.classList.add('show'); // Navigation reinfaden
-  }, 100); // Kleine Verzögerung für sanfteres Laden
-});
-
-window.addEventListener('scroll', () => {
-  let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-  if (scrollTop > lastScrollTop) {
-    // Runterscrollen - Navigation ausblenden
-    nav.classList.add('hide');
-    nav.classList.remove('show');
-  } else {
-    // Hochscrollen - Navigation einblenden
-    nav.classList.add('show');
-    nav.classList.remove('hide');
+    counterObserver.observe(badge);
   }
-  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Fix für mobiles Scrollen
 });
 
-// google btn
-document.querySelector('.Kontakt_map').addEventListener('click', function () {
-  const btn = document.querySelector('.Kontakt_btn');
-  const background = document.querySelector('.Kontakt_bg');
-  background.style.opacity = '0';
-  background.style.pointerEvents = 'none';
-  btn.style.display = 'none';
-});
-
-// counter
+// nav show/hide logic
 document.addEventListener('DOMContentLoaded', function () {
-  const counter = document.querySelector('.Ueberuns_counter');
-  let count = 0;
-  const target = 25;
-  const speed = 100;
+  const stickyIcon = document.querySelector('.sticky-icon');
 
-  const updateCounter = () => {
-    if (count < target) {
-      count++;
-      counter.textContent = count;
-      setTimeout(updateCounter, speed);
+  if (nav) {
+    nav.classList.add('hidden'); // Startzustand direkt setzen
+    setTimeout(() => {
+      nav.classList.remove('hidden');
+      nav.classList.add('show');
+      setupScrollHandling();
+    }, 100); // kleine Verzögerung für ein sanftes Einblenden
+  }
+
+  if (stickyIcon) {
+    stickyIcon.style.opacity = '1';
+  }
+});
+
+// Scroll handling
+function setupScrollHandling() {
+  let lastScrollTop = 0;
+
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if (!nav) return;
+
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop) {
+      nav.classList.add('hide');
+      nav.classList.remove('show');
     } else {
-      counter.textContent = target;
+      nav.classList.add('show');
+      nav.classList.remove('hide');
     }
-  };
+    lastScrollTop = Math.max(0, scrollTop);
 
-  const observer = new IntersectionObserver(function (entries) {
-    if (entries[0].isIntersecting) {
-      updateCounter();
-      observer.disconnect();
+    // Paralax scroll
+    const leistungenSection = document.querySelector('.Leistungen');
+    if (leistungenSection) {
+      leistungenSection.style.backgroundPositionY = `${scrollTop * 0.5}px`;
     }
   });
-
-  observer.observe(document.querySelector('.Ueberuns_badge'));
-});
-
-// Paralax
-window.addEventListener('scroll', function () {
-  const leistungenSection = document.querySelector('.Leistungen');
-  const scrollPosition = window.scrollY;
-
-  // Modify the background position based on the scroll position
-  leistungenSection.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
-});
-
-// sticky cta
-window.addEventListener('load', () => {
-  const stickyIcon = document.querySelector('.sticky-icon');
-  stickyIcon.style.opacity = '1'; // Setzt die Opazität auf 1
-});
+}
