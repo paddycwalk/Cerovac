@@ -265,7 +265,7 @@ img {
 
 .Header {
   height: 100vh;
-  background-image: url("../img/auto15.jpg");
+  background-image: url("../img/newheader.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -724,11 +724,16 @@ nav.open .Nav_top {
   border-radius: 8px;
   gap: 24px;
   height: 100%;
+  transition: transform 0.3s ease;
+}
+.Leistungen_box:hover {
+  transform: scale(1.06);
 }
 .Leistungen_box img,
 .Leistungen_box svg {
   width: 60px;
   height: 60px;
+  transition: transform 0.3s ease;
 }
 @media (min-width: 1200px) {
   .Leistungen_box img,
@@ -736,6 +741,10 @@ nav.open .Nav_top {
     width: 80px;
     height: 80px;
   }
+}
+._box:hover .Leistungen_box img,
+._box:hover .Leistungen_box svg {
+  transform: scale(1.1);
 }
 .Leistungen_box h3 {
   color: var(--color-white);
